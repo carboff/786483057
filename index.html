@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡伯夫 (CARBOFF) | 北京卡伯夫国际贸易有限公司 | 可降解环保包装解决方案</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 头部样式 */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--深绿色);
+            font-weight: 700;
+        }
+        .logo span {
+            color: var(--主要绿色);
+            font-weight: 300;
+            font-size: 1rem;
+            margin-left: 5px;
+        }
+        .logo .carboff {
+            font-size: 0.9rem;
+            background-color: var(--浅绿色);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--深灰色);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.05rem;
+        }
+        nav ul li a:hover {
+            color: var(--主要绿色);
+        }
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--深绿色);
+        }
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(26, 147, 111, 0.9), rgba(17, 75, 95, 0.85)), url('https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--主要绿色);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button:hover {
+            background-color: var(--浅绿色);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        /* 公司理念 */
+        .mission {
+            padding: 100px 0;
+            background-color: var(--浅灰色);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--深绿色);
+            margin-bottom: 15px;
+        }
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .mission-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .mission-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        .mission-text h3 {
+            font-size: 1.8rem;
+            color: var(--主要绿色);
+            margin-bottom: 20px;
+        }
+        .mission-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .mission-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .mission-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        /* 产品展示 */
+        .products {
+            padding: 100px 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        .product-img {
+            height: 220px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+        }
+        .product-info {
+            padding: 25px;
+        }
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--深绿色);
+        }
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        /* 公司优势 */
+        .advantages {
+            padding: 100px 0;
+            background-color: var(--浅灰色);
+        }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .advantage-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .advantage-card i {
+            font-size: 3rem;
+            color: var(--主要绿色);
+            margin-bottom: 20px;
+        }
+        .advantage-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--深绿色);
+        }
+        /* 联系我们 */
+        .contact {
+            padding: 100px 0;
+        }
+        .contact-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--深绿色);
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: var(--主要绿色);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: var(--深绿色);
+        }
+        /* 页脚 */
+        footer {
+            background-color: var(--深绿色);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .footer-section a:hover {
+            color: white;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 5px 15px;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .mission-content {
+                flex-direction: column;
+            }
+            .mission-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>卡伯夫 <span>CARBOFF</span> <span class="carboff">零碳排·环保</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#mission">公司理念</a></li>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#certificates">资质认证</a></li>
+                    <li><a href="#advantages">公司优势</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>北京卡伯夫国际贸易有限公司</h2>
+            卡伯夫(CARBOFF) = 零碳排(Carbon Offset)，我们致力于提供环保可降解包装解决方案，助力企业实现可持续发展目标。我们提供可降解包装、杯托、育苗杯等全系列产品，支持多规格定制，已获得FSC认证，正在申请BPI和OK认证。
+            <a href="#contact" class="cta-button">获取定制方案</a>
+        </div>
+    </section>
+
+    <!-- 公司理念 -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>公司理念</h2>
+                以科技与自然共生，让包装回归大地
+            </div>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h3>我们的使命</h3>
+                    卡伯夫（CARBOFF）致力于为全球客户提供最优质的环保可降解包装解决方案。我们相信，企业的成功不应以牺牲环境为代价。通过创新研发和严格的质量控制，我们将造纸废料转化为高性能、可生物降解的环保产品，减少塑料污染，保护地球生态。
+                    <h3>我们的愿景</h3>
+                    成为全球领先的环保包装供应商，让每一个包装都能回归自然，实现真正的零碳排。我们立志把产品销往全球，与世界各国企业共同守护蓝色星球。
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="公司办公环境">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>产品中心</h2>
+                全系列可降解环保产品
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-seedling fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>可降解育苗杯</h3>
+                        以包装纸箱边角料、废纸为原料，经特殊工艺制成，可完全生物降解，为植物提供天然生长环境，适用于各类苗木培育。
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-coffee fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>可降解杯托</h3>
+                        专为咖啡、茶饮设计，坚固耐用，隔热防烫，使用后可自然降解，是替代塑料杯托的理想选择。
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-box-open fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>可降解包装</h3>
+                        适用于电子产品、食品、化妆品等多种行业，可根据客户需求定制尺寸和形状，强度高，环保无毒。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公司优势 -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="section-title">
+                <h2>公司优势</h2>
+                为什么选择卡伯夫？
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>专业研发</h3>
+                    拥有专业研发团队，持续创新，产品性能领先行业。
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>原料可靠</h3>
+                    采用包装纸箱边角料、废纸为原料，资源循环利用，环保可追溯。
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>质量稳定</h3>
+                    严格质量控制体系，产品性能稳定，符合国际标准。
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>价格优势</h3>
+                    规模化生产，成本优势明显，性价比高。
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>出货快捷</h3>
+                    旗下多个工厂，产能充足，快速响应订单，准时交货。
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>全球合作</h3>
+                    已与美国、墨西哥、澳大利亚等国家建立合作关系，产品远销海外。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系我们</h2>
+                获取专属定制方案
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    北京卡伯夫国际贸易有限公司
+                    地址：北京市通州区（邮编：101100）
+                    电话：+86 19957851972
+                    邮箱：qxg@carboff.net
+                    <p style="margin-top: 20px; font-weight: 600;">
+                        * 邮件和留言将自动转发至：54qxg@sina.com
+
+                    <div style="margin-top: 30px;">
+                        <h3>合作国家</h3>
+                        美国 | 墨西哥 | 澳大利亚
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">公司名称</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>卡伯夫 CARBOFF</h3>
+                    零碳排·环保
+                    北京卡伯夫国际贸易有限公司
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="#home">首页</a>
+                    <a href="#mission">公司理念</a>
+                    <a href="#products">产品中心</a>
+                    <a href="#advantages">公司优势</a>
+                </div>
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <a href="tel:+8619957851972">+86 19957851972</a>
+                    <a href="mailto:qxg@carboff.net">qxg@carboff.net</a>
+                    北京市通州区，101100
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 北京卡伯夫国际贸易有限公司. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的移动端菜单切换
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').style.display = 
+                document.querySelector('nav ul').style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
