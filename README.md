@@ -1,65 +1,65 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+
+
+<头>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>北京卡伯夫国际贸易有限公司 | 可降解环保包装解决方案</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    <样式>
+        *  {
+            边距：0;
+            
+            盒模型：边框盒;
+            字体家族：'Segoe UI'，'Microsoft YaHei'，无衬线;
         }
         
         :root {
-            --primary-green: #1a936f;
-            --light-green: #88d498;
-            --dark-green: #114b5f;
-            --cream: #f3e9d2;
+            --主要绿色: #1a936f;
+            --浅绿色: #88d498;
+            --深绿色: #114b5f;
+            --奶油色: #f3e9d2;
             --light-gray: #f8f9fa;
-            --dark-gray: #333;
+            --深灰色: #333;
         }
         
         body {
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: #fff;
+            行高: 1.6;
+            颜色: var(--深灰色);
+            背景颜色: #fff;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1200px;
+        容器 {
+            宽度：100%；
+            最大宽度：1200像素；
             margin: 0 auto;
-            padding: 0 20px;
+            填充: 0 20px;
         }
         
         /* 头部样式 */
-        header {
-            background-color: white;
+        标题 {
+            背景颜色：白色；
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
+            position: 粘性;
+            顶部：0；
             z-index: 1000;
         }
         
         .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+            显示: 弹性布局;
+            项目对齐方式: 两端对齐;
+            对齐项目：居中；
+            内边距：15px 0;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
+            显示: 弹性布局;
+            对齐项目：居中；
         }
         
         .logo h1 {
-            font-size: 1.8rem;
-            color: var(--dark-green);
-            font-weight: 700;
+            字体大小: 1.8rem;
+            颜色: var(--深绿色);
+            字体粗细：700；
         }
         
         .logo span {
